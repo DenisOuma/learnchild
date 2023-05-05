@@ -1,0 +1,14 @@
+{
+  "name": "tinker-homeschool",
+  "version": "1.0.0",
+  "description": "Parts to the web app - Anonymousy-accessed pages     - Landing page     - Register page - Logged-in user:     - Use a simple sidebar     - Pages to include:         - Profile page",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./app/static/css/src/input.css -o ./app/static/css/dist/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

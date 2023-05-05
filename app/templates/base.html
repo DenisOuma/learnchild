@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/dist/output.css') }}"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
+			rel="stylesheet"
+		/>
+		{% if title %}
+		<title>{{ title }}- Tinker Homeschool</title>
+		{% else %}
+		<title>Tinker Homeschool</title>
+		{% endif %}
+	</head>
+	<body>
+		<div class="w-full bg-navbar-prime-color shadow-lg">
+			<div
+				class="container flex items-center justify-between max-w-6xl m-auto py-3"
+			>
+				<h1>Tinker Homeschool</h1>
+				<button
+					class="py-1 px-8 items-end font-[500] text-[.9rem] rounded capitalise bg-primary-color hover:bg-btn-hover-color hover:text-universal-color"
+				>
+					Login
+				</button>
+			</div>
+		</div>
+		<div>{% block content%} {% endblock%}</div>
+		<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+	</body>
+</html>

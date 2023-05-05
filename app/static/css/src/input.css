@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title-font {
+	font-family: "Schoolbell", cursive;
+}
+
+img {
+	object-fit: cover;
+}
+
+/* bouncing icon */
+.icon-bounce {
+	position: relative;
+	animation-name: bounce;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes bounce {
+	from {
+		top: 0;
+	}
+	to {
+		top: 10px;
+	}
+}
+
+/* center image  */
+.image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* styling the image section design */
+.parent-con {
+	position: relative;
+}
+.cards-pos {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	justify-content: center;
+	text-align: center;
+}
+
+/* underlined text art drawn */
+.text-underline {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	/* color: #000; */
+	font-weight: bold;
+	font-size: 3rem;
+}
+
+.text-underline::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 10%;
+	background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"%3E%3Cpath d="M.5.5L7.5.5" stroke="%23110D06" stroke-linecap="round" stroke-width="5.5"/%3E%3C/svg%3E');
+	background-position: bottom center;
+	background-size: 100% 100%;
+	background-repeat: repeat-x;
+}
+
+.card-adv {
+	background-color: #00c2ff;
+	padding: 1rem;
+	cursor: pointer;
+}
+/* left card animation */
+.card-adv-left {
+	animation: slide-in-left 1s forwards;
+}
+
+@keyframes slide-in-left {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
+/* right card animation */
+.card-adv-right {
+	animation: slide-in-right 1s forwards;
+}
+
+@keyframes slide-in-right {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
+/* hit the wall effect */
+.card-adv {
+	position: relative;
+}
+.card-adv:hover {
+	background-color: #ff8057;
+}
+.card-adv:before {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.5rem;
+	background-color: #00c2ff;
+	transform-origin: bottom right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-out;
+}
+
+.card-adv:after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.5rem;
+	background-color: #00c2ff;
+	transform-origin: bottom left;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-out;
+}
+
+.card-adv:hover:before {
+	transform-origin: bottom left;
+	transform: scaleX(1);
+}
+
+.card-adv:hover:after {
+	transform-origin: bottom right;
+	transform: scaleX(1);
+}
+
+/* shake effect */
+.card-adv:hover {
+	animation: shake 0.5s ease-in-out forwards;
+}
+
+@keyframes shake {
+	0% {
+		transform: translateX(0);
+	}
+	20% {
+		transform: translateX(-0.5rem);
+	}
+	40% {
+		transform: translateX(0.5rem);
+	}
+	60% {
+		transform: translateX(-0.5rem);
+	}
+	80% {
+		transform: translateX(0.5rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
